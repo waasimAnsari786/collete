@@ -1,0 +1,130 @@
+/* Custom styles for Collete Restaurant */
+
+/* Remove arrows/spinners from number input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Remove calendar icon from date input */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Make the date field clickable area fill the container */
+.date-field-container {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Remove the Font Awesome calendar icon */
+.date-field-container::after {
+  display: none;
+}
+
+.date-field-container input[type="date"],
+.date-field-container input[type="text"] {
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Additional styling for the booking form */
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  padding: 12px 15px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  transition: border-color 0.3s ease;
+
+  font-weight: 400;
+}
+
+/* Make the form more responsive on mobile */
+@media (max-width: 767px) {
+  .booking-form {
+    padding: 15px;
+  }
+
+  .booking-form .form-control {
+    margin-bottom: 10px;
+  }
+}
+
+/* Add smooth scrolling behavior to the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Contact Form Specific Styling */
+/* ----------------------------- */
+#contact .booking-form input,
+#contact .booking-form select,
+#contact .booking-form textarea,
+#contact .form-control {
+  color: #000000 !important;
+  font-weight: 400;
+  border: 1px solid #ddd;
+}
+
+#contact .booking-form input::placeholder,
+#contact .booking-form select::placeholder,
+#contact .booking-form textarea::placeholder {
+  color: #000000 !important;
+  opacity: 0.7;
+}
+
+#contact .booking-form input:focus,
+#contact .booking-form select:focus,
+#contact .booking-form textarea:focus {
+  border-color: #000000 !important;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) !important;
+  color: #000000 !important;
+}
+
+#contact .booking-content .block-text p,
+#contact .booking-content .block-text h3,
+#contact .booking-content .subtitle,
+#contact .booking-content .title,
+#contact .booking-content .text,
+#contact .form-check-label {
+  color: #000000 !important;
+}
+
+/* Remove any white text color from the contact form section */
+#contact .form-control:-webkit-autofill,
+#contact .form-control:-webkit-autofill:hover,
+#contact .form-control:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Make sure the location info text is also black */
+#contact .content .block-text p,
+#contact .content .block-text h3,
+#contact .content .block-text h6,
+#contact .content .subtitle,
+#contact .content .title,
+#contact .content .text {
+  color: #000000 !important;
+}
+
+#contact .content .block-text .phone {
+  color: #000000 !important;
+}
+
+#contact .content .block-text span {
+  color: #000000 !important;
+  font-weight: bold;
+}
