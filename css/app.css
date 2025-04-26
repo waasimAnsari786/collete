@@ -3029,16 +3029,14 @@ form button {
   object-fit: cover;
 }
 .gallery-box .content {
-  background: #0e1927;
+  background: #0e1927e5;
   position: absolute;
   top: 20px;
   left: 20px;
   right: 20px;
   bottom: 20px;
   text-align: center;
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(0.5);
+
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -3083,9 +3081,10 @@ form button {
   color: #0e1927;
 }
 .gallery-box:hover .content {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
+  /* opacity: 1;
+  visibility: visible; */
+  transform: scale(0.9);
+  background: #0e1927;
 }
 
 .portfolio-box {
