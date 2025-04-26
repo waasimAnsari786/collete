@@ -21,6 +21,49 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // No smooth scrolling JavaScript needed as we're using CSS scroll-behavior
-  // The browser will automatically handle anchor links with built-in smooth scrolling
+  document.querySelectorAll("#menu-primary-menu .menu-item").forEach((item) => {
+    item.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent default behavior
+
+      const link = this.querySelector("a");
+      if (link) {
+        const targetId = link.getAttribute("href");
+        if (targetId && targetId.startsWith("#")) {
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+            smoothScrollTo(targetSection, 500); // 👈 800 milliseconds duration
+          }
+        } else if (link.getAttribute("href")) {
+          window.location.href = link.getAttribute("href");
+        }
+      }
+    });
+  });
+
+  // Smooth Scroll Function with custom duration
+  function smoothScrollTo(target, duration) {
+    const startPosition = window.pageYOffset;
+    const targetPosition =
+      target.getBoundingClientRect().top + window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const run = ease(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    // Ease Function (easeInOutQuad for smooth feeling)
+    function ease(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t--;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+  }
 });

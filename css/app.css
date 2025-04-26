@@ -1090,14 +1090,18 @@ form button {
   top: 80px;
   background: #0e1927;
   text-align: center;
-  padding: 136px 80px 136px 90px;
+  padding: 50px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   width: 589px;
-  height: 814px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .sidebar-content p {
   color: #fff;
@@ -1581,7 +1585,7 @@ form button {
   position: absolute;
   top: 0;
   right: 0;
-  width: 798px;
+  width: 100%;
   height: 634px;
 }
 .opening .opening-img img {
@@ -2400,7 +2404,7 @@ form button {
   transition: all 0.3s ease;
 }
 .choose .choose-content .flat-tabs .menu-tab li h5 {
-  font-size: 17px;
+  font-size: 1rem;
   text-transform: uppercase;
   color: #a5a5a5;
   font-weight: 700;
@@ -2777,8 +2781,7 @@ form button {
 }
 
 .booking {
-  background: url("https://demo.7iquid.com/basilico/main/wp-content/uploads/2023/10/pexels-aleksandra-platonova-2263510-1.jpg")
-    no-repeat;
+  background: url("../images/section/booking.webp") no-repeat;
   background-size: cover;
   background-attachment: fixed;
   padding: 134px 0 133px;
@@ -3028,11 +3031,10 @@ form button {
 .gallery-box .content {
   background: #0e1927;
   position: absolute;
-  top: 40px;
-  left: 25px;
-  right: 37px;
-  bottom: 38px;
-  padding: 90px 40px;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
   text-align: center;
   opacity: 0;
   visibility: hidden;
@@ -3042,6 +3044,11 @@ form button {
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
 }
 .gallery-box .content .name {
   color: #e6c9a2;
@@ -11398,6 +11405,9 @@ img.mfp-img {
   }
   .top-bar-2 .header__logo {
     padding-left: 0;
+  }
+  .header__logo img {
+    width: 50% !important;
   }
   .home-4 .s-menu .container {
     padding-left: 15px;
